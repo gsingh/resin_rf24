@@ -4,20 +4,20 @@ FROM resin/rpi-raspbian:jessie
 # Remove package lists to free up space
 RUN apt-get update	&& apt-get install -y openjdk-7-jdk	&& rm -rf /var/lib/apt/lists/* 
 
-RUN sudo wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key && apt-key add mosquitto-repo.gpg.key
+RUN wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key && apt-key add mosquitto-repo.gpg.key
 RUN rm mosquitto-repo.gpg.key
 
 # RUN cd /etc/apt/sources.list.d/
-RUN sudo wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-wheezy.list  && sudo apt-get update
-RUN sudo apt-get install mosquitto mosquitto-clients
+RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-wheezy.list  && sudo apt-get update
+RUN apt-get install mosquitto mosquitto-clients
 
-RUN sudo wget http://tmrh20.github.io/RF24Installer/RPi/install.sh
+RUN wget http://tmrh20.github.io/RF24Installer/RPi/install.sh
 RUN chmod +x install.sh
 RUN ./install.sh
 RUN rm install.sh
 
-RUN sudo wget --directory-prefix ~/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
-RUN sudo wget --directory-prefix ~/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
+RUN wget --directory-prefix ~/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
+RUN wget --directory-prefix ~/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
 RUN ~/rf24libs/make
 RUN ~/rf24libs/hareceiver"
 
