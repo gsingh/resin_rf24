@@ -2,7 +2,7 @@ FROM resin/rpi-raspbian:jessie
 
 # Install OpenJDK 7
 # Remove package lists to free up space
-RUN apt-get update	&& apt-get install -y openjdk-7-jdk	&& rm -rf /var/lib/apt/lists/* 
+RUN apt-get update	&& apt-get install -y openjdk-7-jdk	&& apt-get install wget && rm -rf /var/lib/apt/lists/* 
 
 RUN wget http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key && apt-key add mosquitto-repo.gpg.key
 RUN rm mosquitto-repo.gpg.key
