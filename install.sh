@@ -28,7 +28,7 @@ ROOT_PATH=${INSTALL_DIR}
 # answer = 'Y'
 # echo answer
 # case ${answer^^} in
-apt-get install git && apt-get install build-essential
+apt-get install -y git && apt-get install -y build-essential
 # esac
 
 # echo $'\n'
@@ -65,7 +65,7 @@ apt-get install git && apt-get install build-essential
 # 	echo "Install ncurses library? (Recommended for RF24Gateway)"
 # 	echo $answer
 #     case ${answer^^} in
-apt-get install libncurses5-dev
+apt-get install -y libncurses5-dev
 	# esac
 	# echo ""
 # fi
