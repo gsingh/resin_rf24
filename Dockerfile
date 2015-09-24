@@ -20,7 +20,7 @@ RUN /bin/sh /tmp/install.sh
 
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
-RUN /home/rf24libs/make
+RUN bin/bash /home/rf24libs/make
 # RUN /bin/bash /home/rf24libs/hareceiver
 
 ADD . /App/
