@@ -125,5 +125,8 @@ echo ""
 echo "Listing files in install directory:"
 # ls ${ROOT_PATH}
 
-
+wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
+wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
+cd /home/rf24libs/
+make
 
