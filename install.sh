@@ -65,7 +65,7 @@ ROOT_PATH=${INSTALL_DIR}
 # 	echo "Install ncurses library? (Recommended for RF24Gateway)"
 # 	echo $answer
 #     case ${answer^^} in
-RUN  apt-get install libncurses5-dev
+apt-get install libncurses5-dev
 	# esac
 	# echo ""
 # fi
@@ -74,9 +74,9 @@ RUN  apt-get install libncurses5-dev
 # then
 	# echo "Installing RF24 Repo..."
 	# echo ""
-	RUN git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
+git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
 	echo ""
-	RUN make install -B -C ${ROOT_PATH}/RF24
+make install -B -C ${ROOT_PATH}/RF24
 	echo ""
 # fi
 
@@ -84,9 +84,9 @@ RUN  apt-get install libncurses5-dev
 # then
 	echo "Installing RF24Network_DEV Repo..."
 	echo ""
-RUN	git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
+git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
 	echo ""
-RUN make install -B -C ${ROOT_PATH}/RF24Network
+make install -B -C ${ROOT_PATH}/RF24Network
 	echo ""
 # fi
 
@@ -94,9 +94,9 @@ RUN make install -B -C ${ROOT_PATH}/RF24Network
 # then
 	echo "Installing RF24Mesh Repo..."
 	echo ""
-	RUN git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
+git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
 	echo ""
-	RUN make install -B -C ${ROOT_PATH}/RF24Mesh
+make install -B -C ${ROOT_PATH}/RF24Mesh
 	echo ""
 # fi
 
@@ -104,14 +104,14 @@ RUN make install -B -C ${ROOT_PATH}/RF24Network
 # then
 	echo "Installing RF24Gateway Repo..."
 	echo ""
-RUN	git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
+git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
 	echo ""
-RUN make install -B -C ${ROOT_PATH}/RF24Gateway
+make install -B -C ${ROOT_PATH}/RF24Gateway
 	
     # echo ""; echo -n "Do you want to build an RF24Gateway example?"
     # echo $answer
     # case ${answer^^} in
-RUN make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";
+make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";
     # esac	
 # fi
 
@@ -123,7 +123,7 @@ echo "See http://tmrh20.github.io for documentation"
 echo "See http://tmrh20.blogspot.com for info "
 echo ""
 echo "Listing files in install directory:"
-# RUN ls ${ROOT_PATH}
+# ls ${ROOT_PATH}
 
 
 
