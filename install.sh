@@ -1,16 +1,16 @@
 #!/bin/bash
 
-INSTALL_PATH="."
+# INSTALL_PATH="."
 INSTALL_DIR="/home/rf24libs"
 
-ROOT_PATH=${INSTALL_PATH}
-ROOT_PATH+=${INSTALL_DIR}
+#ROOT_PATH=${INSTALL_PATH}
+ROOT_PATH=${INSTALL_DIR}
 
 DORF24=1
 DORF24Network=1
 DORF24Mesh=1
 DORF24Gateway=1
-answer = Y
+#answer = Y
 # echo""
 # echo "RF24 libraries installer by TMRh20"
 # echo "report issues at https://github.com/TMRh20/RF24/issues"
@@ -60,7 +60,7 @@ answer = Y
 # esac
 
 if [[ $DORF24Gateway > 0 ]]
-# then
+ then
 # 	echo ""
 # 	echo "Install ncurses library? (Recommended for RF24Gateway)"
 # 	echo $answer
@@ -111,7 +111,7 @@ RUN make install -B -C ${ROOT_PATH}/RF24Gateway
     # echo ""; echo -n "Do you want to build an RF24Gateway example?"
     # echo $answer
     # case ${answer^^} in
-RUN make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";;
+RUN make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";
     # esac	
 fi
 

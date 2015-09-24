@@ -21,7 +21,7 @@ RUN rm install.sh
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
 RUN /home/rf24libs/make
-RUN /bin/bash /home/rf24libs/hareceiver
+# RUN /bin/bash /home/rf24libs/hareceiver
 
 ADD . /App/
 
@@ -30,4 +30,4 @@ RUN dpkg -i /App/ups/upsd_1.2-1.deb
  
 # mv /App/start.sh /start.sh
 
-CMD ["bash", "/App/start.sh"]
+CMD ["bash", "/home/rf24libs/hareceiver"] && ["bash", "/App/start.sh"]
