@@ -123,7 +123,7 @@ echo "See http://tmrh20.github.io for documentation"
 echo "See http://tmrh20.blogspot.com for info "
 echo ""
 echo "Listing files in install directory:"
-RUN ls ${ROOT_PATH}
+# RUN ls ${ROOT_PATH}
 
 
 
