@@ -6,10 +6,10 @@ INSTALL_DIR="/home/rf24libs"
 #ROOT_PATH=${INSTALL_PATH}
 ROOT_PATH=${INSTALL_DIR}
 
-DORF24=1
-DORF24Network=1
-DORF24Mesh=1
-DORF24Gateway=1
+#DORF24=1
+#DORF24Network=1
+#DORF24Mesh=1
+#DORF24Gateway=1
 #answer = Y
 # echo""
 # echo "RF24 libraries installer by TMRh20"
@@ -59,8 +59,8 @@ DORF24Gateway=1
 #     Y ) DORF24Gateway=1;;
 # esac
 
-if [[ $DORF24Gateway > 0 ]]
- then
+# if [[ $DORF24Gateway > 0 ]]
+# then
 # 	echo ""
 # 	echo "Install ncurses library? (Recommended for RF24Gateway)"
 # 	echo $answer
@@ -68,40 +68,40 @@ if [[ $DORF24Gateway > 0 ]]
 RUN  apt-get install libncurses5-dev
 	# esac
 	# echo ""
-fi
+# fi
 
-if [[ $DORF24 > 0 ]]
-then
+# if [[ $DORF24 > 0 ]]
+# then
 	# echo "Installing RF24 Repo..."
 	# echo ""
 	RUN git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
 	echo ""
 	RUN make install -B -C ${ROOT_PATH}/RF24
 	echo ""
-fi
+# fi
 
-if [[ $DORF24Network > 0 ]]
-then
+# if [[ $DORF24Network > 0 ]]
+# then
 	echo "Installing RF24Network_DEV Repo..."
 	echo ""
 RUN	git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
 	echo ""
 RUN make install -B -C ${ROOT_PATH}/RF24Network
 	echo ""
-fi
+# fi
 
-if [[ $DORF24Mesh > 0 ]]
-then
+# if [[ $DORF24Mesh > 0 ]]
+# then
 	echo "Installing RF24Mesh Repo..."
 	echo ""
 	RUN git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
 	echo ""
 	RUN make install -B -C ${ROOT_PATH}/RF24Mesh
 	echo ""
-fi
+# fi
 
-if [[ $DORF24Gateway > 0 ]]
-then
+# if [[ $DORF24Gateway > 0 ]]
+# then
 	echo "Installing RF24Gateway Repo..."
 	echo ""
 RUN	git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
@@ -113,7 +113,7 @@ RUN make install -B -C ${ROOT_PATH}/RF24Gateway
     # case ${answer^^} in
 RUN make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";
     # esac	
-fi
+# fi
 
 
 echo ""
