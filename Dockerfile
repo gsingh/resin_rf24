@@ -12,7 +12,7 @@ RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/de
 RUN apt-get install -y mosquitto mosquitto-clients
 
 RUN wget https://github.com/gsingh/resin_openhab/blob/master/install.sh
-RUN chmod +x /install.sh
+RUN chmod +x install.sh
 RUN /bin/bash /install.sh
 RUN rm install.sh
 
