@@ -16,7 +16,7 @@ RUN /bin/sh /tmp/install.sh
 # RUN wget https://github.com/gsingh/resin_openhab/blob/master/install.sh
 # RUN chmod +x install.sh
 # RUN /bin/bash /install.sh
-RUN rm install.sh
+# RUN rm install.sh
 
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
