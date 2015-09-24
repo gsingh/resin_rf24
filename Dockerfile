@@ -13,7 +13,7 @@ RUN apt-get install -y mosquitto mosquitto-clients
 
 # RUN /bin/bash /install.sh
 RUN chmod +x /install.sh
-RUN ./install.sh
+RUN /bin/bash /install.sh
 RUN rm install.sh
 
 RUN wget --directory-prefix ~/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
