@@ -11,7 +11,7 @@ RUN rm mosquitto-repo.gpg.key
 RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-wheezy.list  && sudo apt-get update
 RUN apt-get install -y mosquitto mosquitto-clients
 
-RUN wget http://tmrh20.github.io/RF24Installer/RPi/install.sh
+# RUN /bin/bash /install.sh
 RUN chmod +x install.sh
 RUN ./install.sh
 RUN rm install.sh
