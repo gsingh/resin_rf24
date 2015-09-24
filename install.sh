@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTALL_PATH="."
-INSTALL_DIR="/rf24libs"
+INSTALL_DIR="/home/rf24libs"
 
 ROOT_PATH=${INSTALL_PATH}
 ROOT_PATH+=${INSTALL_DIR}
