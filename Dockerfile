@@ -12,7 +12,7 @@ RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/de
 RUN apt-get install -y mosquitto mosquitto-clients
 
 # RUN /bin/bash /install.sh
-RUN chmod +x install.sh
+RUN chmod +x /install.sh
 RUN ./install.sh
 RUN rm install.sh
 
