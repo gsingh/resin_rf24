@@ -61,8 +61,8 @@ apt-get install -y git && apt-get install -y build-essential
 
 # if [[ $DORF24Gateway > 0 ]]
 # then
-# 	echo ""
-# 	echo "Install ncurses library? (Recommended for RF24Gateway)"
+	echo ""
+	echo "Installiing ncurses library (Recommended for RF24Gateway)"
 # 	echo $answer
 #     case ${answer^^} in
 apt-get install -y libncurses5-dev
@@ -72,8 +72,8 @@ apt-get install -y libncurses5-dev
 
 # if [[ $DORF24 > 0 ]]
 # then
-	# echo "Installing RF24 Repo..."
-	# echo ""
+	 echo "Installing RF24 Repo..."
+	 echo ""
 git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
 	echo ""
 make install -B -C ${ROOT_PATH}/RF24
