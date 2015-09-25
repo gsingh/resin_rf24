@@ -23,7 +23,7 @@ ROOT_PATH=${INSTALL_DIR}
 # echo ""
 
 # echo "Prerequisite: GIT "
-# echo "Do you want to install GIT using APT?" 
+echo "Installing GIT using APT.." 
 # echo -n "(Used to download source code) "
 # answer = 'Y'
 # echo answer
@@ -86,6 +86,7 @@ make install -B -C ${ROOT_PATH}/RF24
 	echo ""
 git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
 	echo ""
+	echo "Running make install -B -C ${ROOT_PATH}/RF24Network"
 make install -B -C ${ROOT_PATH}/RF24Network
 	echo ""
 # fi
@@ -96,6 +97,7 @@ make install -B -C ${ROOT_PATH}/RF24Network
 	echo ""
 git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
 	echo ""
+	echo "Running make install -B -C ${ROOT_PATH}/RF24Mesh"
 make install -B -C ${ROOT_PATH}/RF24Mesh
 	echo ""
 # fi
