@@ -60,8 +60,8 @@ apt-get install -y git
 #     Y ) DORF24Gateway=1;;
 # esac
 
-if [[ $DORF24Gateway > 0 ]]
-then
+# if [[ $DORF24Gateway > 0 ]]
+# then
 	echo ""
 	echo "Install ncurses library (Recommended for RF24Gateway)"
 	# echo answer
@@ -70,40 +70,40 @@ then
 apt-get install -y libncurses5-dev
 	# esac
 	echo ""
-fi
+# fi
 
-if [[ $DORF24 > 0 ]]
-then
+# if [[ $DORF24 > 0 ]]
+# then
 	echo "Installing RF24 Repo..."
 	echo ""
 	git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
 	echo ""
  make install -B -C ${ROOT_PATH}/RF24
 	echo ""
-fi
+# fi
 
-if [[ $DORF24Network > 0 ]]
-then
+# if [[ $DORF24Network > 0 ]]
+# then
 	echo "Installing RF24Network_DEV Repo..."
 	echo ""
 	git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
 	echo ""
  make install -B -C ${ROOT_PATH}/RF24Network
 	echo ""
-fi
+# fi
 
-if [[ $DORF24Mesh > 0 ]]
-then
+# if [[ $DORF24Mesh > 0 ]]
+# then
 	echo "Installing RF24Mesh Repo..."
 	echo ""
 	git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
 	echo ""
  make install -B -C ${ROOT_PATH}/RF24Mesh
 	echo ""
-fi
+# fi
 
-if [[ $DORF24Gateway > 0 ]]
-then
+# if [[ $DORF24Gateway > 0 ]]
+# then
 	echo "Installing RF24Gateway Repo..."
 	echo ""
 	git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
@@ -118,7 +118,7 @@ then
 	    echo ""
 	    echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses"
     # esac	
-fi
+# fi
 
 
 echo ""
