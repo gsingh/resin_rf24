@@ -22,7 +22,7 @@ RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
 # RUN cd /home/rf24libs/
 # RUN /bin/bash /home/rf24libs/hareceiver
-RUN make -directory=/home/rf24libs/
+RUN make --directory=/home/rf24libs/
 
 ADD . /App/
 
