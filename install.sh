@@ -74,11 +74,16 @@ apt-get install -y libncurses5-dev
 
 # if [[ $DORF24 > 0 ]]
 # then
+
+mkdir /home/rf24libs
+cd /home/rf24libs
+
 	echo "Installing RF24 Repo..."
 	echo ""
-	git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
+	git clone https://github.com/tmrh20/RF24.git RF24
 	echo ""
- make install -B -C ${ROOT_PATH}/RF24
+	cd RF24
+ make install
 	echo ""
 # fi
 
@@ -86,9 +91,12 @@ apt-get install -y libncurses5-dev
 # then
 	echo "Installing RF24Network_DEV Repo..."
 	echo ""
-	git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
+	cd ..
+		git clone https://github.com/tmrh20/RF24Network.git RF24Network
 	echo ""
- make install -B -C ${ROOT_PATH}/RF24Network
+	cd RF24Network
+
+ make install
 	echo ""
 # fi
 
@@ -96,9 +104,11 @@ apt-get install -y libncurses5-dev
 # then
 	echo "Installing RF24Mesh Repo..."
 	echo ""
-	git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
+	cd ..
+	git clone https://github.com/tmrh20/RF24Mesh.git RF24Mesh
 	echo ""
- make install -B -C ${ROOT_PATH}/RF24Mesh
+	cd RF24Mesh
+ make install
 	echo ""
 # fi
 
@@ -106,15 +116,18 @@ apt-get install -y libncurses5-dev
 # then
 	echo "Installing RF24Gateway Repo..."
 	echo ""
-	git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
+	cd ..
+	git clone https://github.com/tmrh20/RF24Gateway.git RF24Gateway
 	echo ""
- make install -B -C ${ROOT_PATH}/RF24Gateway
+	cd RF24Gateway
+ make install
 	
     echo ""; echo -n "Do you want to build an RF24Gateway example?"
     # echo answer
     # case ${answer^^} in
        # Y ) 
-	   make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses
+cd examples/ncurses
+	   make -B
 	    echo ""
 	    echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses"
     # esac	
