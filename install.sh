@@ -1,121 +1,122 @@
 #!/bin/bash
 
-# INSTALL_PATH="."
-INSTALL_DIR="/home/rf24libs"
+INSTALL_PATH="."
+INSTALL_DIR="/rf24libs"
 
-#ROOT_PATH=${INSTALL_PATH}
-ROOT_PATH=${INSTALL_DIR}
+ROOT_PATH=${INSTALL_PATH}
+ROOT_PATH+=${INSTALL_DIR}
 
-#DORF24=1
-#DORF24Network=1
-#DORF24Mesh=1
-#DORF24Gateway=1
-#answer = Y
-# echo""
-# echo "RF24 libraries installer by TMRh20"
-# echo "report issues at https://github.com/TMRh20/RF24/issues"
-# echo ""
-# echo "******************** NOTICE **********************"
-# echo "Installer will create an 'rf24libs' folder for installation of selected libraries"
-# echo "To prevent mistaken deletion, users must manually delete existing library folders within 'rf24libs' if upgrading"
-# echo "Run 'sudo rm -r rf24libs' to clear the entire directory"
-# echo ""
-# echo ""
+DORF24=1
+DORF24Network=1
+DORF24Mesh=1
+DORF24Gateway=1
 
-# echo "Prerequisite: GIT "
-echo "Installing GIT using APT.." 
-# echo -n "(Used to download source code) "
+echo""
+echo "RF24 libraries installer by TMRh20"
+echo "report issues at https://github.com/TMRh20/RF24/issues"
+echo ""
+echo "******************** NOTICE **********************"
+echo "Installer will create an 'rf24libs' folder for installation of selected libraries"
+echo "To prevent mistaken deletion, users must manually delete existing library folders within 'rf24libs' if upgrading"
+echo "Run 'sudo rm -r rf24libs' to clear the entire directory"
+echo ""
+echo ""
+
+echo "Prerequisite: GIT "
+echo "Do you want to install GIT using APT?" 
+echo -n "(Used to download source code) "
 # answer = 'Y'
 # echo answer
 # case ${answer^^} in
-apt-get install -y git && apt-get install -y build-essential
+	# Y ) 
 # esac
+apt-get install git
 
-# echo $'\n'
-# echo -n "Do you want to install the RF24 core library, Y/N?"
-# echo answer
-# case ${answer^^} in
-#     Y ) DORF24=1;;
-# esac
+echo $'\n'
+echo -n "Do you want to install the RF24 core library, Y/N?"
+echo answer
+case ${answer^^} in
+    Y ) DORF24=1;;
+esac
 
-# echo $'\n'
-# echo -n "Do you want to install the RF24Network library?"
-# echo answer
-# case ${answer^^} in
-#     Y ) DORF24Network=1;;
-# esac
+echo $'\n'
+echo -n "Do you want to install the RF24Network library?"
+echo answer
+case ${answer^^} in
+    Y ) DORF24Network=1;;
+esac
 
-# echo $'\n'
-# echo -n "Do you want to install the RF24Mesh library?"
-# echo answer
-# case ${answer^^} in
-#     Y ) DORF24Mesh=1;;
-# esac
+echo $'\n'
+echo -n "Do you want to install the RF24Mesh library?"
+echo answer
+case ${answer^^} in
+    Y ) DORF24Mesh=1;;
+esac
 
-# echo $'\n'
-# echo -n "Do you want to install the RF24Gateway library?"
-# echo answer
-# case ${answer^^} in
-#     Y ) DORF24Gateway=1;;
-# esac
+echo $'\n'
+echo -n "Do you want to install the RF24Gateway library?"
+echo answer
+case ${answer^^} in
+    Y ) DORF24Gateway=1;;
+esac
 
-# if [[ $DORF24Gateway > 0 ]]
-# then
+if [[ $DORF24Gateway > 0 ]]
+then
 	echo ""
-	echo "Installiing ncurses library (Recommended for RF24Gateway)"
-# 	echo $answer
-#     case ${answer^^} in
-apt-get install -y libncurses5-dev
+	echo "Install ncurses library? (Recommended for RF24Gateway)"
+	# echo answer
+    # case ${answer^^} in
+		# Y )
+apt-get install libncurses5-dev
 	# esac
-	# echo ""
-# fi
-
-# if [[ $DORF24 > 0 ]]
-# then
-	 echo "Installing RF24 Repo..."
-	 echo ""
-git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
 	echo ""
-make install -B -C ${ROOT_PATH}/RF24
-	echo ""
-# fi
+fi
 
-# if [[ $DORF24Network > 0 ]]
-# then
+if [[ $DORF24 > 0 ]]
+then
+	echo "Installing RF24 Repo..."
+	echo ""
+	git clone https://github.com/tmrh20/RF24.git ${ROOT_PATH}/RF24
+	echo ""
+ make install -B -C ${ROOT_PATH}/RF24
+	echo ""
+fi
+
+if [[ $DORF24Network > 0 ]]
+then
 	echo "Installing RF24Network_DEV Repo..."
 	echo ""
-git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
+	git clone https://github.com/tmrh20/RF24Network.git ${ROOT_PATH}/RF24Network
 	echo ""
-	echo "Running make install -B -C ${ROOT_PATH}/RF24Network"
-make install -B -C ${ROOT_PATH}/RF24Network
+ make install -B -C ${ROOT_PATH}/RF24Network
 	echo ""
-# fi
+fi
 
-# if [[ $DORF24Mesh > 0 ]]
-# then
+if [[ $DORF24Mesh > 0 ]]
+then
 	echo "Installing RF24Mesh Repo..."
 	echo ""
-git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
+	git clone https://github.com/tmrh20/RF24Mesh.git ${ROOT_PATH}/RF24Mesh
 	echo ""
-	echo "Running make install -B -C ${ROOT_PATH}/RF24Mesh"
-make install -B -C ${ROOT_PATH}/RF24Mesh
+ make install -B -C ${ROOT_PATH}/RF24Mesh
 	echo ""
-# fi
+fi
 
-# if [[ $DORF24Gateway > 0 ]]
-# then
+if [[ $DORF24Gateway > 0 ]]
+then
 	echo "Installing RF24Gateway Repo..."
 	echo ""
-git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
+	git clone https://github.com/tmrh20/RF24Gateway.git ${ROOT_PATH}/RF24Gateway
 	echo ""
-make install -B -C ${ROOT_PATH}/RF24Gateway
+ make install -B -C ${ROOT_PATH}/RF24Gateway
 	
-    # echo ""; echo -n "Do you want to build an RF24Gateway example?"
-    # echo $answer
+    echo ""; echo -n "Do you want to build an RF24Gateway example?"
+    echo answer
     # case ${answer^^} in
-make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";
+       # Y ) 
+	   make -B -C${ROOT_PATH}/RF24Gateway/examples/ncurses; echo ""; echo "Complete, to run the example, cd to rf24libs/RF24Gateway/examples/ncurses and enter  sudo ./RF24Gateway_ncurses";;
     # esac	
-# fi
+fi
 
 
 echo ""
@@ -125,13 +126,7 @@ echo "See http://tmrh20.github.io for documentation"
 echo "See http://tmrh20.blogspot.com for info "
 echo ""
 echo "Listing files in install directory:"
-# ls ${ROOT_PATH}
+ls ${ROOT_PATH}
 
-wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
-wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
-cd /home/rf24libs/
-make -directory=/home/rf24libs/
 
-echo ""
-echo "Completed make !!" 
 
