@@ -14,7 +14,13 @@ RUN apt-get install -y mosquitto mosquitto-clients
 
 ADD ./install.sh /tmp/install.sh
 RUN /bin/sh /tmp/install.sh
-RUN cp /rf24libs /home/rf24libs
+COPY rf24libs /home/rf24libs/
+RUN apt-get install -y build-essential && apt-get install -y libncurses5-dev
+RUN make install --directory=/home/rf24libs/RF24
+RUN make -B --directory=/home/rf24libs/RF24Network
+RUN make -B --directory=/home/rf24libs/RF24Mesh
+RUN make -B --directory=/home/rf24libs/RF24Gateway
+RUN make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses
 # RUN wget https://github.com/gsingh/resin_openhab/blob/master/install.sh
 # RUN chmod +x install.sh
 # RUN /bin/bash /install.sh
@@ -24,6 +30,7 @@ RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com
 RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
 # RUN cd /home/rf24libs/
 # RUN /bin/bash /home/rf24libs/hareceiver
+
 RUN make -B --directory=/home/rf24libs/
 
 ADD . /App/
