@@ -9,21 +9,23 @@ RUN rm mosquitto-repo.gpg.key
 
 # RUN cd /etc/apt/sources.list.d/
 RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-wheezy.list  && sudo apt-get update
-RUN apt-get install -y mosquitto mosquitto-clients
+RUN apt-get install -y mosquitto mosquitto-clients && /
+	apt-get install -y build-essential && /
+	apt-get install -y libncurses5-dev
 
 
 ADD ./install.sh /tmp/install.sh
 RUN /bin/sh /tmp/install.sh
 COPY rf24libs /home/rf24libs
-RUN echo ls /home/rf24libs && /
- echo ls /home/rf24libs/RF24
- 
-RUN apt-get install -y build-essential && apt-get install -y libncurses5-dev
-RUN make install --directory=/home/rf24libs/RF24
-RUN make -B --directory=/home/rf24libs/RF24Network
-RUN make -B --directory=/home/rf24libs/RF24Mesh
-RUN make -B --directory=/home/rf24libs/RF24Gateway
-RUN make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses
+# RUN echo ls /home/rf24libs && /
+ # echo ls /home/rf24libs/RF24
+
+# RUN apt-get install -y build-essential && apt-get install -y libncurses5-dev
+RUN make install --directory=/home/rf24libs/RF24/
+RUN make install --directory=/home/rf24libs/RF24Network/
+RUN make install --directory=/home/rf24libs/RF24Mesh/
+RUN make --directory=/home/rf24libs/RF24Gateway/
+RUN make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses/
 # RUN wget https://github.com/gsingh/resin_openhab/blob/master/install.sh
 # RUN chmod +x install.sh
 # RUN /bin/bash /install.sh
