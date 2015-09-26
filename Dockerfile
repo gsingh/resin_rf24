@@ -21,17 +21,17 @@ COPY rf24libs /home/rf24libs
  # echo ls /home/rf24libs/RF24
 
 # RUN apt-get install -y build-essential && apt-get install -y libncurses5-dev
-RUN make install --directory=/home/rf24libs/RF24/ && \
-	make install --directory=/home/rf24libs/RF24Network/ && \ 
-	make install --directory=/home/rf24libs/RF24Mesh/  && \
-	make install --directory=/home/rf24libs/RF24Gateway/
-RUN make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses/
+# RUN make install --directory=/home/rf24libs/RF24/ && \
+# 	make install --directory=/home/rf24libs/RF24Network/ && \ 
+# 	make install --directory=/home/rf24libs/RF24Mesh/  && \
+# 	make install --directory=/home/rf24libs/RF24Gateway/
+# RUN make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses/
 # RUN wget https://github.com/gsingh/resin_openhab/blob/master/install.sh
 # RUN chmod +x install.sh
 # RUN /bin/bash /install.sh
 # RUN rm install.sh
 
-RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp && /
+RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp && \
 	wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
 # RUN cd /home/rf24libs/
 # RUN /bin/bash /home/rf24libs/hareceiver
