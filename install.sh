@@ -1,10 +1,10 @@
 #!/bin/bash
 
-INSTALL_PATH="."
+# INSTALL_PATH="."
 INSTALL_DIR="/home/rf24libs"
 
-ROOT_PATH=${INSTALL_PATH}
-ROOT_PATH+=${INSTALL_DIR}
+# ROOT_PATH=${INSTALL_PATH}
+ROOT_PATH=${INSTALL_DIR}
 
 DORF24=1
 DORF24Network=1
@@ -75,24 +75,25 @@ apt-get install -y libncurses5-dev
 # if [[ $DORF24 > 0 ]]
 # then
 
-mkdir /home/rf24libs
-cd /home/rf24libs
+# mkdir /home/rf24libs
+cd /rf24libs
 
-	echo "Installing RF24 Repo..."
+	echo "make RF24 Repo..."
 	echo ""
-	git clone https://github.com/tmrh20/RF24.git RF24
+	# git clone https://github.com/tmrh20/RF24.git RF24
 	echo ""
 	cd RF24
+
  make install
 	echo ""
 # fi
 
 # if [[ $DORF24Network > 0 ]]
 # then
-	echo "Installing RF24Network_DEV Repo..."
+	echo "make RF24Network_DEV Repo..."
 	echo ""
 	cd ..
-		git clone https://github.com/tmrh20/RF24Network.git RF24Network
+		# git clone https://github.com/tmrh20/RF24Network.git RF24Network
 	echo ""
 	cd RF24Network
 
@@ -105,7 +106,7 @@ cd /home/rf24libs
 	echo "Installing RF24Mesh Repo..."
 	echo ""
 	cd ..
-	git clone https://github.com/tmrh20/RF24Mesh.git RF24Mesh
+	# git clone https://github.com/tmrh20/RF24Mesh.git RF24Mesh
 	echo ""
 	cd RF24Mesh
  make install
@@ -117,7 +118,7 @@ cd /home/rf24libs
 	echo "Installing RF24Gateway Repo..."
 	echo ""
 	cd ..
-	git clone https://github.com/tmrh20/RF24Gateway.git RF24Gateway
+	# git clone https://github.com/tmrh20/RF24Gateway.git RF24Gateway
 	echo ""
 	cd RF24Gateway
  make install

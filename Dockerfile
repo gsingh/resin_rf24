@@ -11,8 +11,10 @@ RUN rm mosquitto-repo.gpg.key
 RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-wheezy.list  && sudo apt-get update
 RUN apt-get install -y mosquitto mosquitto-clients
 
+
 ADD ./install.sh /tmp/install.sh
 RUN /bin/sh /tmp/install.sh
+RUN cp /rf24libs /home/rf24libs
 # RUN wget https://github.com/gsingh/resin_openhab/blob/master/install.sh
 # RUN chmod +x install.sh
 # RUN /bin/bash /install.sh
