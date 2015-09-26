@@ -30,8 +30,8 @@ echo -n "(Used to download source code) "
 # case ${answer^^} in
 	# Y ) 
 # esac
-apt-get install -y git
-
+# apt-get install -y git
+apt-get install -y build-essential
 # echo $'\n'
 # echo -n "Do you want to install the RF24 core library, Y/N?"
 # echo answer
@@ -76,7 +76,7 @@ apt-get install -y libncurses5-dev
 # then
 
 # mkdir /home/rf24libs
-cd rf24libs
+cd ./rf24libs
 
 	echo "make RF24 Repo..."
 	echo ""
