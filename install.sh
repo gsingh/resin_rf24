@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # INSTALL_PATH="."
-INSTALL_DIR="/home/rf24libs"
+INSTALL_DIR="/rf24libs"
 
 # ROOT_PATH=${INSTALL_PATH}
 ROOT_PATH=${INSTALL_DIR}
@@ -76,7 +76,7 @@ apt-get install -y libncurses5-dev
 # then
 
 # mkdir /home/rf24libs
-cd /rf24libs
+cd rf24libs
 
 	echo "make RF24 Repo..."
 	echo ""
