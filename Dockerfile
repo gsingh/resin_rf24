@@ -20,6 +20,7 @@ COPY rf24libs /home/rf24libs
 # RUN echo ls /home/rf24libs && /
  # echo ls /home/rf24libs/RF24
 
+WORKDIR /home/rf24libs
 # RUN apt-get install -y build-essential && apt-get install -y libncurses5-dev
 # RUN make install --directory=/home/rf24libs/RF24/ && \
 # 	make install --directory=/home/rf24libs/RF24Network/ && \ 
@@ -44,5 +45,5 @@ ADD . /App/
 RUN dpkg -i /App/ups/upsd_1.2-1.deb
  
 # mv /App/start.sh /start.sh
-
-CMD ["bash", "/home/rf24libs/hareceiver"] && ["bash", "/App/start.sh"]
+# CMD ["bash", "/home/rf24libs/hareceiver"] && ["bash", "/App/start.sh"]
+CMD ["bash", "/App/start.sh"]
