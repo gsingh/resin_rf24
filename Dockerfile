@@ -16,7 +16,7 @@ RUN apt-get install -y mosquitto mosquitto-clients && \
 
 ADD ./install.sh /tmp/install.sh
 RUN /bin/sh /tmp/install.sh
-ADD rf24libs /home/rf24libs/
+ADD rf24libs /home/rf24libs
 # COPY startRF.sh /App/startRF.sh
 # RUN echo ls /home/rf24libs && /
  # echo ls /home/rf24libs/RF24
