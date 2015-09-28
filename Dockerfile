@@ -46,5 +46,5 @@ ADD . /App/
 RUN dpkg -i /App/ups/upsd_1.2-1.deb
  
 # mv /App/start.sh /start.sh
-# CMD ["bash", "/App/startRF.sh"] && ["bash", "/App/start.sh"]
-CMD ["bash", "/App/start.sh"]
+CMD ["bash", "/App/startRF.sh"] && ["bash", "/App/start.sh"]
+# CMD ["bash", "/App/start.sh"]
