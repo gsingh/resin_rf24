@@ -46,9 +46,11 @@ RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com
 
 ADD . /App/
 
+EXPOSE 80
+EXPOSE 443
 # Install the UPS Support
 RUN dpkg -i /App/ups/upsd_1.2-1.deb
  
 # mv /App/start.sh /start.sh
-CMD [supervisord]
+CMD ["/usr/bin/supervisord"]
 # CMD ["bash", "/App/start.sh"]
