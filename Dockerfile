@@ -13,10 +13,10 @@ RUN apt-get install -y mosquitto mosquitto-clients \
 	build-essential \
 	libncurses5-dev \
 	supervisor
-RUN echo_supervisord_conf
+# RUN echo_supervisord_conf
 	# COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-
+ADD supervisord.conf /etc/supervisor/conf.d/
 
 ADD ./install.sh /tmp/install.sh
 RUN /bin/sh /tmp/install.sh
@@ -50,5 +50,5 @@ ADD . /App/
 RUN dpkg -i /App/ups/upsd_1.2-1.deb
  
 # mv /App/start.sh /start.sh
-CMD ["bash", "/App/startRF.sh", "/App/start.sh"]
+CMD [supervisord]
 # CMD ["bash", "/App/start.sh"]
