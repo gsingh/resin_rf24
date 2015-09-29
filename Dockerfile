@@ -13,8 +13,8 @@ RUN apt-get install -y mosquitto mosquitto-clients \
 	build-essential \
 	libncurses5-dev \
 	supervisor
-
-	COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN echo_supervisord_conf
+	# COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 
 
