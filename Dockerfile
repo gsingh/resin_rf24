@@ -46,6 +46,9 @@ RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com
 
 ADD . /App/
 
+RUN chmod +x /App/start.sh
+RUN chmod +x /App/startRF.sh
+
 EXPOSE 80
 EXPOSE 443
 # Install the UPS Support
