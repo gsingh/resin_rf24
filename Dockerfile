@@ -9,9 +9,13 @@ RUN rm mosquitto-repo.gpg.key
 
 # RUN cd /etc/apt/sources.list.d/
 RUN wget --directory-prefix /cd/apt/sources.list.d/ http://repo.mosquitto.org/debian/mosquitto-wheezy.list  && sudo apt-get update
-RUN apt-get install -y mosquitto mosquitto-clients && \
-	apt-get install -y build-essential && \
-	apt-get install -y libncurses5-dev
+RUN apt-get install -y mosquitto mosquitto-clients \
+	build-essential \
+	libncurses5-dev \
+	supervisor
+
+	COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 
 
 ADD ./install.sh /tmp/install.sh
