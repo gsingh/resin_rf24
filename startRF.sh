@@ -11,5 +11,5 @@ sudo make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses/ && \
 	make -B --directory=/home/rf24libs/
 
 cd /home/rf24libs
-sudo chmod +x 	/home/hareceiver
+sudo chmod +x 	/home/rf24libs/hareceiver
 sudo ./hareceiver
