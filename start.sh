@@ -1,4 +1,8 @@
 #!/bin/sh
+cd /App
+chmod +x startRF.sh
+./startRF.sh
+cd ..
 
 cd `dirname $0`
 
@@ -32,8 +36,8 @@ java \
 	-jar $cp $* \
 	-console
 
-cd /App
-chmod +x startRF.sh
-./startRF.sh
+# cd /App
+# chmod +x startRF.sh
+# ./startRF.sh
 
  
