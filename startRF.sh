@@ -11,5 +11,7 @@
 	make -B --directory=/home/rf24libs/
 
 cd /home/rf24libs
-sudo chmod +x /home/rf24libs/hareceiver
- ./hareceiver
+chmod +x /home/rf24libs/hareceiver
+
+service mosquitto start
+ # ./hareceiver
