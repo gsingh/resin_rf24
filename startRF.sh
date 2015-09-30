@@ -8,10 +8,11 @@
 	make install --directory=/home/rf24libs/RF24Gateway/
 
  make -B --directory=/home/rf24libs/RF24Gateway/examples/ncurses/ && \
-	make -B --directory=/home/rf24libs/
+ make -B --directory=/home/rf24libs/
 
 cd /home/rf24libs
 chmod +x /home/rf24libs/hareceiver
+./hareceiver
 
-service mosquitto start
+
  # ./hareceiver

@@ -20,7 +20,7 @@ ADD supervisord.conf /etc/supervisor/conf.d/
 
 ADD ./install.sh /tmp/install.sh
 RUN /bin/sh /tmp/install.sh
-ADD rf24libs /home/rf24libs
+# ADD rf24libs /home/rf24libs
 # COPY startRF.sh /App/startRF.sh
 # RUN echo ls /home/rf24libs && /
  # echo ls /home/rf24libs/RF24
@@ -37,12 +37,16 @@ ADD rf24libs /home/rf24libs
 # RUN /bin/bash /install.sh
 # RUN rm install.sh
 
-RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp && \
-	wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
+RUN wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/hareceiver.cpp
+RUN	wget --directory-prefix /home/rf24libs http://www.homeautomationforgeeks.com/code/Makefile
+ADD rf24libs /home/rf24libs
+
 # RUN cd /home/rf24libs/
 # RUN /bin/bash /home/rf24libs/hareceiver
 
 # RUN make -B --directory=/home/rf24libs/
+# cd /home/rf24libs
+# chmod +x /home/rf24libs/hareceiver
 
 ADD . /App/
 
