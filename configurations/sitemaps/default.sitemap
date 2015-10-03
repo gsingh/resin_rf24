@@ -1,6 +1,0 @@
-sitemap default label="Main Menu"
-{
-        Frame label="MQTT Test" {
-                Text item=TestTemperature
-        }
-}
