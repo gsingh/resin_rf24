@@ -50,7 +50,7 @@ ADD rf24libs /home/rf24libs
 
 ADD . /App/
 
-RUN chmod +x /App/start.sh
+# RUN chmod +x /App/start.sh
 RUN chmod +x /App/startRF.sh
 
 EXPOSE 80
